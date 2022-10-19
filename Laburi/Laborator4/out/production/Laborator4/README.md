@@ -1,6 +1,3 @@
-Echipa: Dumitru Elena, Nicolescu Andrei, Paun Miruna, Tomescu Petru
-Grupa: 331CC
-
 # Laborator 4
 
 ## Ex. 1
