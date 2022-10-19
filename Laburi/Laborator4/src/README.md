@@ -2,7 +2,7 @@ Laborator 4
 
 ## Ex. 1
 
-	Am creat clasa MyThread care extinde clasa Java Threads, pentru a putea
+Am creat clasa MyThread care extinde clasa Java Threads, pentru a putea
 suprascrie functia run(). In Main, am initializat Thread-urile cu noua clasa
 si le-am lansat folosind functia start().
 
