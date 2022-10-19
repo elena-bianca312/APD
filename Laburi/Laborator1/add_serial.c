@@ -31,7 +31,6 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    // TODO: aceasta operatie va fi paralelizata
   	for (int i = 0; i < array_size; i++) {
         arr[i] += 100;
     }
