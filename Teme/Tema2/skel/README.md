@@ -4,8 +4,7 @@ Dumitru Elena-Bianca
 # Tema 2 - Algoritmi Paraleli si Distribuiti
 # Procesarea de documente folosind paradigma Map-Reduce
 
-In aceasta tema, am implementat un program paralel de parsare, prelucrare si in-
-terpretare a datelor din mai multe fisiere.
+In aceasta tema, am implementat un program paralel de parsare, prelucrare si interpretare a datelor din mai multe fisiere.
 
 Logica programului este implementata de clasa Parser.
 
@@ -22,8 +21,7 @@ campurile relevante: numarul de fisiere, numele lor.
 
 ### makeTasks
 
-In functia makeTasks, generam task-urile de tip map si reduce si le retinem re-
-zultatele in liste corespunzatoare. Ambele task-uri implementeaza interfata
+In functia makeTasks, generam task-urile de tip map si reduce si le retinem rezultatele in liste corespunzatoare. Ambele task-uri implementeaza interfata
 Runnable pentru a putea intoarce obiecte cu informatiile necesare.
 
 Dupa realizarea ambelor tipuri de task-uri, inchidem executorService-ul pentru
