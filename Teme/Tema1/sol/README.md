@@ -55,45 +55,42 @@ formulele din laborator: pentru a face o impartire corecta, trebuie sa impartim
 la 2 * width si sa inmultim din nou. Insa, pentru ca de aceasta data, dimensiu-
 nea array-ul nu este mereu putere a lui 2 sau impartirea pe thread-uri nu este 
 simetrica, trebuie sa luam ceil() de impartire pentru a ne asigura ca toate va-
-lorile sunt prelucrate.
-<br />
+lorile sunt prelucrate. <br />
+
 In continuare, for-ul este normal, fiecare thread lucrand pe segmentul
 sau. Trebuie sa tinem cont de inmultirea cu 2 * width si in pas-ul for-ului
-pentru a avea un numar corect de pasi.
-<br />
+pentru a avea un numar corect de pasi. <br />
+
 Dupa prelucrarea pe fiecare nivel de width, trebuie sa transferam noile
 valori (care au fost calculate in componenta copy a structurii de parametri)
 din nou in current_generation, care la final va fi sortat si gata de prelucrari
 ulterioare. Dupa ce facem transferul, punem o bariera pentru a ne asigura ca
-toate thread-urile incep calculul urmatorului nivel in acelasi timp.
-<br />
+toate thread-urile incep calculul urmatorului nivel in acelasi timp. <br />
+
 Paralelizam for-urile urmatoare, recalculand start-ul si stop-ul in 
-functie de noul count. 
-<br />
+functie de noul count. <br />
+
 Pentru partea de crossover first 30% parents with one-point crossover,
 trebuie sa tinem cont ca nu putem avea valori impare. Asadar, modificam count.
 In for-ul de dupa observam ca pasul este +2, deci trebuie sa modificam si start
-sa aiba o valoare para pentru a nu avea suprapuneri. Daca start este impar in-
-seamna ca am ajuns la ultimul individ din generatie care trebuie pastrat pentru
-generatia urmatoare.
-<br />
+sa aiba o valoare para pentru a nu avea suprapuneri. Daca start este impar inseamna ca am ajuns la ultimul individ din generatie care trebuie pastrat pentru generatia urmatoare. <br />
+
 Urmeaza functia paralelizata calculate_set_chromosomes care calculeaza
 numarul de cromozomi setati pentru fiecare individ. Observam ca functia folosi-
 ta pentru sortare tine cont de acest aspect cand valorile de fitness sunt egale
 si ii calculeaza. Insa, la cat de multe repetari avem intr-o functie de sortare,
 acest fapt devine prea costisitor, deci vom calcula numarul de biti sortati
-doar o data pe generatie. Astfel, timpul necesar sortarii se reduce considera-
-bil.
-*cromozom setat = are valoarea 1
-<br />
+doar o data pe generatie. Astfel, timpul necesar sortarii se reduce considerabil.
+*cromozom setat = are valoarea 1 <br />
+
 Paralelizam transferul catre o noua generatie si printam best_fitness
 dintr-un singur thread pentru a nu avea dubluri (am ales thread-ul 0 pentru ca
-acesta exista intotdeauna).
-<br />
+acesta exista intotdeauna). <br />
+
 La final, realizam pentru ultima oara: compute_fitness_function(), sor-
 tarea si afisarea. La final, eliberam memoria si ii semnalam thread-ului ca s-a
-termina functia prin apelul pthread_exit().
-<br />
+termina functia prin apelul pthread_exit(). <br />
+
 In main, dam join thread-urilor si eliberam sursele de memorie comune 
 folosite.
 
