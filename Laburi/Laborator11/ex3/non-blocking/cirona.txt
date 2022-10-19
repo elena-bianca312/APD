@@ -1,0 +1,24 @@
+De ce nu merge asta (adica de ce nu se afiseaza "Dupa 1\n" ?) - probabil se
+blocheaza in MPI_Wait de dinainte, dar de ce?    
+
+(ex - inserarea codului astuia la linia 24 sau 36 - sau ambele)
+
+    MPI_Request requests[1], request;
+
+    MPI_Isend(num2, SIZE, MPI_INT, 0, 0, MPI_COMM_WORLD, &request);
+    printf("Aici 1\n");
+    MPI_Status status;
+    int flag;
+    MPI_Test(&request, &flag, &status);
+
+    if (flag) {
+        // e bns
+    } else {
+        MPI_Wait(&request, &status);
+    }
+    // MPI_Waitall(1, requests, MPI_STATUSES_IGNORE);
+    printf("Dupa 1\n");
+
+    // MPI_Irecv(num1, SIZE, MPI_INT, 0, 0, MPI_COMM_WORLD, &requests[0]);
+    // MPI_Waitall(1, requests, MPI_STATUSES_IGNORE);
+    MPI_Recv(num1, SIZE, MPI_INT, 0, 0, MPI_COMM_WORLD, NULL);

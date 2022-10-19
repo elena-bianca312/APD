@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "*.pl": "prolog",
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "array": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp",
+        "*.tcc": "cpp",
+        "iosfwd": "cpp",
+        "string": "cpp"
+    }
+}

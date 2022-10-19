@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="CountLetters">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/CountLetters.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

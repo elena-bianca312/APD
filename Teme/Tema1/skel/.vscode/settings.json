@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.pl": "prolog",
+        "genetic_algorithm_par.h": "c",
+        "type_traits": "c"
+    }
+}
