@@ -13,8 +13,6 @@ void *f(void *arg) {
 
 int main(int argc, char *argv[]) {
 
-	// printf("cores: %ld\n", sysconf(_SC_NPROCESSORS_CONF));
-
 	pthread_t threads[NUM_THREADS];
   	int r;
   	long id;
