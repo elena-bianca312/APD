@@ -1,7 +1,4 @@
-Echipa: Dumitru Elena, Nicolescu Andrei, Paun Iulia Miruna, Tomescu Petru - Alin;
-Grupa: 331CC;
-
-#Laborator 9
+# Laborator 9
 
 ## Exercitiul 1 - Reduction
 
